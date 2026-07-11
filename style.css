@@ -1,0 +1,911 @@
+/* =====================================================
+   DRA. KAREN GARCIA
+   ADVOCACIA DE TRÂNSITO
+====================================================== */
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#ffffff;
+
+    color:#1d1d1d;
+
+    overflow-x:hidden;
+
+}
+
+/* CONTAINER */
+
+.container{
+
+    width:90%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+}
+
+/* CORES */
+
+:root{
+
+    --dourado:#C8A044;
+
+    --preto:#111111;
+
+    --cinza:#777;
+
+    --branco:#ffffff;
+
+    --cinza-claro:#f7f7f7;
+
+}
+
+/* HEADER */
+
+header{
+
+    width:100%;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    z-index:999;
+
+    background:rgba(255,255,255,.96);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+
+}
+
+header .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:5px 0;
+    
+
+}
+
+.logo img{
+
+    width: 140px;
+    height:auto;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:var(--preto);
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:var(--dourado);
+
+}
+
+/* BOTÕES */
+
+.btn-menu,
+.btn-principal{
+
+    display:inline-block;
+
+    background:var(--dourado);
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-menu:hover,
+.btn-principal:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.20);
+
+}
+
+.btn-secundario{
+
+    display:inline-block;
+
+    margin-left:15px;
+
+    color:var(--preto);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+/* HERO */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    background:linear-gradient(to right,#fff 55%,#faf7ef);
+
+    padding-top:170px;
+
+}
+
+.hero-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:70px;
+
+}
+
+.hero-texto{
+
+    flex:1;
+
+}
+
+.hero-texto span{
+
+    color:var(--dourado);
+
+    letter-spacing:3px;
+
+    font-weight:600;
+
+}
+
+.hero-texto h1{
+
+    font-size:64px;
+
+    font-family:'Playfair Display',serif;
+
+    margin:20px 0;
+
+    line-height:1.2;
+
+}
+
+.hero-texto strong{
+
+    color:var(--dourado);
+
+}
+
+.hero-texto p{
+
+    font-size:18px;
+
+    color:#555;
+
+    margin-bottom:40px;
+
+    line-height:1.8;
+
+}
+
+.hero-imagem{
+
+    flex:1;
+
+    text-align:right;
+
+}
+
+.hero-imagem img {
+    width: 380px;
+    max-width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.15);
+}
+
+/* SERVIÇOS */
+
+#servicos{
+
+    padding:100px 0;
+
+    background:#fff;
+
+}
+
+.titulo{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.titulo span{
+
+    color:var(--dourado);
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+}
+
+.titulo h2{
+
+    margin-top:15px;
+
+    font-size:42px;
+
+    font-family:'Playfair Display',serif;
+
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:40px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    box-shadow:0 8px 30px rgba(0,0,0,.06);
+
+}
+
+.card:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.card i{
+
+    font-size:45px;
+
+    color:var(--dourado);
+
+    margin-bottom:20px;
+
+}
+
+.card h3{
+
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+/* SOBRE */
+
+#sobre{
+
+    padding:120px 0;
+
+    background:var(--cinza-claro);
+
+}
+
+#sobre .container{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:80px;
+
+}
+
+.sobre-imagem img{
+
+    width:500px;
+    max-width:auto;
+    height:500px;
+    object-fit:cover;
+    border-radius:20px;
+
+}
+
+
+.sobre-texto h2{
+
+    font-size:46px;
+
+    margin:20px 0;
+
+    font-family:'Playfair Display',serif;
+
+}
+
+.sobre-texto p{
+
+    color:#666;
+
+    line-height:1.9;
+
+    margin-bottom:40px;
+
+}
+
+/* CONTATO */
+
+#contato {
+
+    padding: 30px 0;
+
+}
+
+form{
+
+    display:grid;
+
+    gap:20px;
+
+}
+
+input,
+textarea {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    padding: 12px 18px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+textarea{
+
+    height:150px;
+
+    resize:none;
+
+}
+
+button{
+
+    border:none;
+
+    background:var(--dourado);
+
+    color:#fff;
+
+    padding:18px;
+
+    border-radius:50px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* FOOTER */
+
+footer{
+
+    background:#111;
+
+    color:white;
+
+    padding:60px 0;
+
+    text-align:center;
+
+}
+
+footer img{
+
+    height:70px;
+
+    margin-bottom:20px;
+
+}
+
+/* BOTÃO WHATSAPP */
+
+.btn-whatsapp{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:65px;
+
+    height:65px;
+
+    background:#25D366;
+
+    color:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.20);
+
+    z-index:9999;
+
+    transition:.3s;
+
+}
+
+.btn-whatsapp:hover{
+
+    transform:scale(1.05);
+
+}
+
+.btn-whatsapp i{
+
+    font-size:34px;
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:991px){
+
+.hero-container{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.hero-texto h1{
+
+font-size:46px;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+#sobre .container{
+
+flex-direction:column;
+
+}
+
+nav{
+
+display:none;
+
+}
+
+.btn-menu{
+
+display:none;
+
+}
+
+.btn-whatsapp span{
+
+display:none;
+
+}
+
+.btn-whatsapp{
+
+width:70px;
+
+height:70px;
+
+justify-content:center;
+
+padding:0;
+
+border-radius:50%;
+
+}
+
+}/*=========================================
+ANIMAÇÕES
+=========================================*/
+
+header.scroll{
+
+    background:#ffffff;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+/* Cards */
+
+.card{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.card.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition:.8s;
+
+}
+
+/* Botão WhatsApp */
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+.btn-whatsapp.pulse{
+
+    animation:pulse .8s;
+
+}
+
+/*=====================================
+CONTATOS
+=====================================*/
+
+.contatos{
+
+    background:#fff;
+
+    padding:8px 0;
+
+}
+
+.contatos-grid{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:40px;
+
+    flex-wrap:wrap;
+
+}
+
+.contato-box{
+
+    width:280px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:12px 16px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    color:#222;
+
+    transition:.3s;
+
+}
+
+.contato-box:hover{
+
+    background:#d4a63c;
+
+    color:#fff;
+
+    transform:translateY(-4px);
+
+}
+
+.contato-box i{
+
+    font-size:24px;
+
+    color:#c99a28;
+
+}
+
+.contato-box:hover i{
+
+    color:#fff;
+
+}
+
+.contato-box span{
+
+    display:block;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+    color:#b8860b;
+
+}
+
+.contato-box:hover span{
+
+    color:#fff;
+
+}
+
+.contato-box h3{
+
+    font-size:15px;
+
+    font-weight:600;
+
+    margin-top:2px;
+
+}
+
+
+/*=====================================
+DIFERENCIAIS
+=====================================*/
+
+.diferenciais{
+
+    background:linear-gradient(90deg,#b8860b,#d8aa3c,#b8860b);
+
+    color:#fff;
+
+    padding:28px 0;
+
+    margin-top:8px;
+
+}
+
+.diferenciais-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:0;
+
+}
+
+.item{
+
+    text-align:center;
+
+    border-right:1px solid rgba(255,255,255,.25);
+
+    padding:5px 18px;
+
+}
+
+.item:last-child{
+
+    border-right:none;
+
+}
+
+.item i{
+
+    font-size:34px;
+
+    margin-bottom:12px;
+
+}
+
+.item h3{
+
+    font-size:15px;
+
+    line-height:22px;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.item p{
+
+    font-size:13px;
+
+    line-height:20px;
+
+    opacity:.95;
+
+}
+
+
+/*=====================================
+RODAPÉ
+=====================================*/
+
+footer{
+
+    background:#111;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:22px;
+
+}
+
+footer p{
+
+    margin:0;
+
+    font-size:14px;
+
+}
+
+/* ===============================
+   FORMULÁRIO
+================================ */
+
+.btn-enviar{
+
+    width:100%;
+
+    margin-top:10px;
+
+    transition:.3s;
+
+}
+
+.btn-enviar:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.btn-enviar:disabled{
+
+    opacity:.7;
+
+    cursor:not-allowed;
+
+}
+
+#mensagem{
+
+    margin-top:15px;
+
+    text-align:center;
+
+    font-weight:600;
+
+    min-height:25px;
+
+}
