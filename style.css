@@ -13,6 +13,9 @@
 
 html{
     scroll-behavior:smooth;
+    width:100%;
+    max-width:100%;
+    overflow-x: hidden;
 }
 
 body{
@@ -23,9 +26,9 @@ body{
 
     color:#1d1d1d;
 
-    overflow-x:hidden;
+    max-width: 100%;
 
-    width: 100%;
+    overflow-x: hidden;
 
 }
 
@@ -378,13 +381,27 @@ nav a:hover{
 
 }
 
+.sobre-imagem{
+
+    flex:0 0 500px;
+    width: 500px;
+
+}
+
 .sobre-imagem img{
 
-    width:500px;
-    max-width:100%;
-    height:500px;
+    display:block;
+    width:100%;
+    height: 500px;  
     object-fit:cover;
     border-radius:20px;
+
+}
+
+.sobre-texto{
+
+    flex:1;
+    min-width:0;
 
 }
 
@@ -548,11 +565,6 @@ footer img{
 
 @media (max-width: 991px){
 
-    .container{
-        width:90%;
-        max-width:100%;
-    }
-
     .hero{
         padding-top:140px;
         padding-bottom:60px;
@@ -592,14 +604,18 @@ footer img{
     }
 
     .sobre-imagem{
+        flex:0 0 auto;
         width:100%;
+        max-width:500px;
         text-align:center;
     }
 
     .sobre-imagem img{
-        width:500px;
-        max-width:100%;
+        display: block;
+        width:100%;
         height:auto;
+        aspect-ratio: 1 / 1;
+        object-fit:cover;
     }
 
     nav{
@@ -630,11 +646,6 @@ footer img{
 
 @media (max-width: 600px){
 
-    .container{
-        width:90%;
-        max-width:100%;
-    }
-
     .hero{
         min-height:auto;
         padding-top:120px;
@@ -642,7 +653,6 @@ footer img{
     }
 
     .hero-container{
-        width:100%;
         gap:30px;
     }
 
@@ -719,13 +729,17 @@ footer img{
     }
 
     .sobre-imagem{
+        flex:0 0 auto;
         width:100%;
+        max-width:500px;
     }
 
     .sobre-imagem img{
+        display:block;
         width:100%;
-        max-width:100%;
         height:auto;
+        aspect-ratio: 1 / 1;
+        object-fit:cover;
     }
 
     .sobre-texto h2{
