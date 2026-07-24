@@ -25,6 +25,8 @@ body{
 
     overflow-x:hidden;
 
+    width: 100%;
+
 }
 
 /* CONTAINER */
@@ -35,7 +37,7 @@ body{
 
     max-width:1300px;
 
-    margin:auto;
+    margin:0 auto;
 
 }
 
@@ -379,7 +381,7 @@ nav a:hover{
 .sobre-imagem img{
 
     width:500px;
-    max-width:auto;
+    max-width:100%;
     height:500px;
     object-fit:cover;
     border-radius:20px;
@@ -540,69 +542,258 @@ footer img{
 
 }
 
-/* RESPONSIVO */
+/* =====================================
+   RESPONSIVO - TABLET
+===================================== */
 
-@media(max-width:991px){
+@media (max-width: 991px){
 
-.hero-container{
+    .container{
+        width:90%;
+        max-width:100%;
+    }
 
-flex-direction:column;
+    .hero{
+        padding-top:140px;
+        padding-bottom:60px;
+    }
 
-text-align:center;
+    .hero-container{
+        flex-direction:column;
+        text-align:center;
+        gap:40px;
+    }
+
+    .hero-texto{
+        width:100%;
+    }
+
+    .hero-texto h1{
+        font-size:46px;
+    }
+
+    .hero-imagem{
+        width:100%;
+        text-align:center;
+    }
+
+    .hero-imagem img{
+        width:380px;
+        max-width:100%;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    #sobre .container{
+        flex-direction:column;
+        gap:40px;
+    }
+
+    .sobre-imagem{
+        width:100%;
+        text-align:center;
+    }
+
+    .sobre-imagem img{
+        width:500px;
+        max-width:100%;
+        height:auto;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .btn-menu{
+        display:none;
+    }
+
+    .btn-whatsapp{
+        width:60px;
+        height:60px;
+        right:15px;
+        bottom:15px;
+    }
+
+    .diferenciais-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
 }
 
-.hero-texto h1{
 
-font-size:46px;
+/* =====================================
+   RESPONSIVO - CELULAR
+===================================== */
+
+@media (max-width: 600px){
+
+    .container{
+        width:90%;
+        max-width:100%;
+    }
+
+    .hero{
+        min-height:auto;
+        padding-top:120px;
+        padding-bottom:60px;
+    }
+
+    .hero-container{
+        width:100%;
+        gap:30px;
+    }
+
+    .hero-texto{
+        width:100%;
+    }
+
+    .hero-texto span{
+        font-size:12px;
+        letter-spacing:2px;
+    }
+
+    .hero-texto h1{
+        font-size:36px;
+        line-height:1.15;
+        margin:15px 0;
+    }
+
+    .hero-texto p{
+        font-size:15px;
+        line-height:1.7;
+        margin-bottom:30px;
+    }
+
+    .hero-imagem{
+        width:100%;
+        text-align:center;
+    }
+
+    .hero-imagem img{
+        width:100%;
+        max-width:350px;
+        height:auto;
+    }
+
+    .btn-principal{
+        padding:13px 24px;
+        font-size:14px;
+    }
+
+    .btn-secundario{
+        display:block;
+        margin:20px 0 0;
+    }
+
+
+    /* SERVIÇOS */
+
+    #servicos{
+        padding:70px 0;
+    }
+
+    .titulo{
+        margin-bottom:40px;
+    }
+
+    .titulo h2{
+        font-size:32px;
+    }
+
+    .card{
+        padding:30px 20px;
+    }
+
+
+    /* SOBRE */
+
+    #sobre{
+        padding:70px 0;
+    }
+
+    #sobre .container{
+        gap:35px;
+    }
+
+    .sobre-imagem{
+        width:100%;
+    }
+
+    .sobre-imagem img{
+        width:100%;
+        max-width:100%;
+        height:auto;
+    }
+
+    .sobre-texto h2{
+        font-size:34px;
+    }
+
+    .sobre-texto p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+
+    /* CONTATO */
+
+    #contato{
+        padding:70px 0;
+    }
+
+    input,
+    textarea{
+        width:100%;
+        max-width:100%;
+    }
+
+
+    /* DIFERENCIAIS */
+
+    .diferenciais{
+        padding:20px 0;
+    }
+
+    .diferenciais-grid{
+        grid-template-columns:1fr;
+    }
+
+    .item{
+        border-right:none;
+        border-bottom:1px solid rgba(255,255,255,.25);
+        padding:20px 15px;
+    }
+
+    .item:last-child{
+        border-bottom:none;
+    }
+
+
+    /* CONTATOS */
+
+    .contatos-grid{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .contato-box{
+        width:100%;
+        max-width:280px;
+    }
+
+
+    /* FOOTER */
+
+    footer{
+        padding:30px 15px;
+    }
 
 }
 
-.cards{
-
-grid-template-columns:1fr;
-
-}
-
-#sobre .container{
-
-flex-direction:column;
-
-}
-
-nav{
-
-display:none;
-
-}
-
-.btn-menu{
-
-display:none;
-
-}
-
-.btn-whatsapp span{
-
-display:none;
-
-}
-
-.btn-whatsapp{
-
-width:70px;
-
-height:70px;
-
-justify-content:center;
-
-padding:0;
-
-border-radius:50%;
-
-}
-
-}/*=========================================
+/*=========================================
 ANIMAÇÕES
 =========================================*/
 
