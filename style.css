@@ -492,15 +492,15 @@ button:hover{
 /* FOOTER */
 
 footer{
-
     background:#111;
-
-    color:white;
-
-    padding:60px 0;
-
+    color:#fff;
     text-align:center;
+    padding:22px 22px calc(22px + env(safe-area-inset-bottom));
+}
 
+footer p{
+    margin:0;
+    font-size:14px;
 }
 
 footer img{
@@ -802,7 +802,7 @@ footer img{
     /* FOOTER */
 
     footer{
-        padding:30px 15px;
+        padding:30px 15px calc(30px + env(safe-area-inset-bottom));
     }
 
 }
@@ -1052,26 +1052,6 @@ DIFERENCIAIS
 /*=====================================
 RODAPÉ
 =====================================*/
-
-footer{
-
-    background:#111;
-
-    color:#fff;
-
-    text-align:center;
-
-    padding:22px;
-
-}
-
-footer p{
-
-    margin:0;
-
-    font-size:14px;
-
-}
 
 /* ===============================
    FORMULÁRIO
