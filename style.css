@@ -210,6 +210,8 @@ nav a:hover{
     text-align:center;
     transition:.4s;
     box-shadow:0 8px 30px rgba(0,0,0,.06);
+    opacity:1;
+    transform:translateY(0);
 }
 
 .card:hover{
@@ -462,32 +464,38 @@ footer img{
     margin-bottom:20px;
 }
 
-/* BOTÃO WHATSAPP */
+/* BOTÃO FLUTUANTE WHATSAPP (CORRIGIDO: POSIÇÃO E VERDE OFICIAL) */
 
-.btn-whatsapp{
-    position:fixed;
-    right:25px;
-    bottom:25px;
-    width:65px;
-    height:65px;
-    background:#25D366;
-    color:#fff;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    box-shadow:0 10px 30px rgba(0,0,0,.20);
-    z-index:9999;
-    transition:.3s;
+.btn-whatsapp {
+    position: fixed;
+    right: 60px; /* Movido mais para a esquerda */
+    bottom: 25px;
+    background-color: #25D366; /* Verde oficial WhatsApp */
+    color: #fff;
+    border-radius: 50px;
+    padding: 12px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    animation: pulsoRapido 0.8s infinite alternate ease-in-out;
 }
 
-.btn-whatsapp:hover{
-    transform:scale(1.05);
+.btn-whatsapp i {
+    font-size: 24px;
 }
 
-.btn-whatsapp i{
-    font-size:34px;
+.btn-whatsapp span {
+    white-space: nowrap;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128C7E; /* Tom verde escuro oficial no hover */
 }
 
 /* ANIMAÇÕES */
@@ -498,36 +506,20 @@ header.scroll{
     transition:.3s;
 }
 
-.card{
-    opacity:1;
-    transform:translateY(0);
-}
-
-.card.show{
-    opacity:1;
-    transform:translateY(0);
-    transition:.8s;
-}
-
-@keyframes pulse{
-    0%{
-        transform:scale(1);
+@keyframes pulsoRapido {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
     }
-    50%{
-        transform:scale(1.08);
+    100% {
+        transform: scale(1.06);
+        box-shadow: 0 0 15px 8px rgba(37, 211, 102, 0);
     }
-    100%{
-        transform:scale(1);
-    }
-}
-
-.btn-whatsapp.pulse{
-    animation:pulse .8s;
 }
 
 
 /* =====================================================
-   REGRAS RESPONSIVAS (Sempre ao final do arquivo)
+   REGRAS RESPONSIVAS
 ====================================================== */
 
 /* TABLET */
@@ -595,11 +587,15 @@ header.scroll{
         display:none;
     }
 
-    .btn-whatsapp{
-        width:60px;
-        height:60px;
-        right:15px;
-        bottom:15px;
+    .btn-whatsapp {
+        right: 40px;
+        bottom: 20px;
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+
+    .btn-whatsapp i {
+        font-size: 20px;
     }
 
     .diferenciais-grid{
@@ -773,6 +769,19 @@ header.scroll{
     .contato-box{
         width:100%;
         max-width:100%;
+    }
+
+    /* BOTÃO WHATSAPP MOBILE */
+
+    .btn-whatsapp {
+        right: 25px;
+        bottom: 15px;
+        padding: 8px 14px;
+        font-size: 11px;
+    }
+
+    .btn-whatsapp i {
+        font-size: 18px;
     }
 
     /* FOOTER */
