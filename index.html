@@ -6,12 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dra. Karen Garcia | Advocacia de Trânsito</title>
+    <title>Dra. Karen Garcia | Advocacia Especializada</title>
 
     <link rel="icon" type="image/png" href="imagens/logo.png">
 
     <meta name="description"
-        content="Especialista em Direito de Trânsito. Defesa em multas, Lei Seca, suspensão e cassação da CNH.">
+        content="Especialista em Direito de Trânsito e Direito do Consumidor. Defesa em multas, Lei Seca, CNH, negativações e problemas do consumidor.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,8 +24,8 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
 
-    <!-- CSS com Cache Busting atualizado (v=3) -->
-    <link rel="stylesheet" href="style.css?v=3">
+    <!-- CSS com Cache Busting atualizado (v=4) -->
+    <link rel="stylesheet" href="style.css?v=4">
 
 </head>
 
@@ -40,7 +40,7 @@
         target="_blank">
 
         <i class="fa-brands fa-whatsapp"></i>
-        <span>Atendimento digital em todo o Brasil</span>
+        <span>Atendimento 100% digital em todo o Brasil</span>
 
     </a>
 
@@ -102,13 +102,13 @@
 
                     Defesa especializada em
 
-                    <strong>Direito de Trânsito.</strong>
+                    <strong>Direito de Trânsito e do Consumidor.</strong>
 
                 </h1>
 
                 <p>
 
-                    Protegendo seu direito de dirigir com atendimento rápido,
+                    Protegendo seus direitos com atendimento rápido,
                     estratégico e totalmente personalizado.
 
                 </p>
@@ -141,57 +141,102 @@
     <!-- ÁREAS DE ATUAÇÃO -->
     <!-- ========================= -->
 
-    <section id="servicos"> 
-        <div class="container"> 
-            <div class="titulo"> 
-                <span>Áreas de Atuação</span> 
-                <h2>Como podemos ajudar?</h2> 
-            </div> 
-            
-            <div class="cards"> 
-                <!-- Lei Seca --> 
-                <div class="card"> 
-                    <i class="fa-solid fa-wine-glass"></i> 
-                    <h3>Lei Seca (Bafômetro)</h3> 
-                    <p>Defesa especializada em autuações e suspensão da CNH.</p> 
-                </div> 
+    <section id="servicos">
+        <div class="container">
+            <div class="titulo">
+                <span>Áreas de Atuação</span>
+                <h2>Como podemos ajudar?</h2>
+            </div>
 
-                <!-- CNH Suspensa --> 
-                <div class="card"> 
-                    <i class="fa-solid fa-id-card"></i> 
-                    <h3>CNH Suspensa</h3> 
-                    <p>Recursos para evitar a perda do direito de dirigir.</p> 
-                </div> 
+            <!-- Barra de Seleção (Abas) -->
+            <div class="tabs-container">
+                <button class="tab-btn active" data-target="transito">
+                    <i class="fa-solid fa-car"></i> Direito de Trânsito
+                </button>
+                <button class="tab-btn" data-target="consumidor">
+                    <i class="fa-solid fa-cart-shopping"></i> Direito do Consumidor
+                </button>
+            </div>
 
-                <!-- Excesso de Velocidade --> 
-                <div class="card"> 
-                    <i class="fa-solid fa-gauge-high"></i> 
-                    <h3>Excesso de Velocidade</h3> 
-                    <p>Defesa em infrações que podem gerar suspensão.</p> 
-                </div> 
+            <!-- CARDS DE TRÂNSITO (ATIVO POR PADRÃO) -->
+            <div id="transito" class="cards-grid active">
+                <div class="card">
+                    <i class="fa-solid fa-wine-glass"></i>
+                    <h3>Lei Seca (Bafômetro)</h3>
+                    <p>Defesa especializada em autuações e suspensão da CNH.</p>
+                </div>
 
-                <!-- Cassação --> 
-                <div class="card"> 
-                    <i class="fa-solid fa-shield-halved"></i> 
-                    <h3>Cassação da CNH</h3> 
-                    <p>Atuação para preservar sua habilitação.</p> 
-                </div> 
+                <div class="card">
+                    <i class="fa-solid fa-id-card"></i>
+                    <h3>CNH Suspensa</h3>
+                    <p>Recursos para evitar a perda do direito de dirigir.</p>
+                </div>
 
-                <!-- Recursos --> 
-                <div class="card"> 
-                    <i class="fa-solid fa-file-signature"></i> 
-                    <h3>Recursos de Multas</h3> 
-                    <p>Contestação administrativa em todas as fases.</p> 
-                </div> 
+                <div class="card">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <h3>Excesso de Velocidade</h3>
+                    <p>Defesa em infrações que podem gerar suspensão.</p>
+                </div>
 
-                <!-- Processo Administrativo --> 
-                <div class="card"> 
-                    <i class="fa-solid fa-scale-balanced"></i> 
-                    <h3>Processo Administrativo de Trânsito</h3> 
-                    <p>Acompanhamento completo perante os órgãos de trânsito.</p> 
-                </div>  
-            </div> 
-        </div> 
+                <div class="card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Cassação da CNH</h3>
+                    <p>Atuação para preservar sua habilitação.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-file-signature"></i>
+                    <h3>Recursos de Multas</h3>
+                    <p>Contestação administrativa em todas as fases.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h3>Processo Administrativo</h3>
+                    <p>Acompanhamento completo perante os órgãos de trânsito.</p>
+                </div>
+            </div>
+
+            <!-- CARDS DE CONSUMIDOR -->
+            <div id="consumidor" class="cards-grid">
+                <div class="card">
+                    <i class="fa-solid fa-user-slash"></i>
+                    <h3>Negativação Indevida</h3>
+                    <p>Remoção do nome do SPC/Serasa e pedido de danos morais.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                    <h3>Cobrança Indevida</h3>
+                    <p>Devolução de taxas abusivas e cobranças não autorizadas.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-wifi"></i>
+                    <h3>Telefonia e Internet</h3>
+                    <p>Soluções para sinal ruim, cobranças indevidas e cancelamentos.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-shield-virus"></i>
+                    <h3>Golpes Bancários</h3>
+                    <p>Recuperação de valores por fraudes, PIX e empréstimos falsos.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-box-open"></i>
+                    <h3>Produtos Defeituosos</h3>
+                    <p>Troca, reembolso e reparação por falhas na garantia.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-notes-medical"></i>
+                    <h3>Planos de Saúde</h3>
+                    <p>Defesa contra reajustes abusivos e negativas de cobertura.</p>
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <!-- ========================= -->
@@ -215,15 +260,15 @@
 
                 <h2>
 
-                    Compromisso, estratégia e dedicação para proteger o seu direito de dirigir.
+                    Compromisso, estratégia e dedicação para proteger os seus direitos.
 
                 </h2>
 
                 <p>
 
-                    Advogada, formada em Direito em 2010, em Campo Grande/MS, atuo de forma especializada em Direito de Trânsito. 
+                    Advogada, formada em Direito em 2010, em Campo Grande/MS, atuo de forma especializada em Direito de Trânsito e Direito do Consumidor. 
                     Meu propósito é oferecer uma advocacia séria, transparente e comprometida, com atendimento personalizado e acompanhamento próximo em cada etapa do processo. 
-                    Atuo na defesa de condutores em casos de Lei Seca, suspensão e cassação da CNH, recursos de multas e demais questões relacionadas ao trânsito, buscando sempre a estratégia mais adequada para cada situação.
+                    Atuo na defesa de condutores e consumidores, buscando sempre a estratégia mais adequada para cada situação.
 
                 </p>
 
@@ -406,7 +451,7 @@
         <div class="container">
 
             <p>
-                © 2026 Karen Garcia - Advocacia de Trânsito.
+                © 2026 Karen Garcia - Advocacia Especializada.
                 Todos os direitos reservados.
             </p>
 

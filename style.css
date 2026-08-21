@@ -1,6 +1,6 @@
 /* =====================================================
    DRA. KAREN GARCIA
-   ADVOCACIA DE TRÂNSITO
+   ADVOCACIA ESPECIALIZADA
 ====================================================== */
 
 /* RESET */
@@ -38,6 +38,7 @@ body{
 
 :root{
     --dourado:#C8A044;
+    --dourado-escuro:#d4a63c;
     --preto:#111111;
     --cinza:#777;
     --branco:#ffffff;
@@ -173,7 +174,7 @@ nav a:hover{
     box-shadow: 0 15px 40px rgba(0,0,0,.15);
 }
 
-/* SERVIÇOS */
+/* SERVIÇOS & ABAS (SELEÇÃO DE ÁREAS DE ATUAÇÃO) */
 
 #servicos{
     padding:100px 0;
@@ -182,7 +183,7 @@ nav a:hover{
 
 .titulo{
     text-align:center;
-    margin-bottom:70px;
+    margin-bottom:50px;
 }
 
 .titulo span{
@@ -197,10 +198,83 @@ nav a:hover{
     font-family:'Playfair Display',serif;
 }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
+/* CONTAINER DA BARRA DE SELEÇÃO (TABS) */
+
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: var(--cinza-claro);
+    color: #222;
+    border: 2px solid transparent;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all .3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tab-btn i {
+    font-size: 18px;
+    color: var(--dourado);
+    transition: .3s;
+}
+
+.tab-btn:hover {
+    background: var(--dourado);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.tab-btn:hover i {
+    color: #fff;
+}
+
+/* ABA SELECIONADA (ESTADO ATIVO) */
+
+.tab-btn.active {
+    background: var(--dourado-escuro);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(200, 160, 68, 0.3);
+}
+
+.tab-btn.active i {
+    color: #fff;
+}
+
+/* LÓGICA DE EXIBIÇÃO DOS CARDS */
+
+.cards-grid {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.cards-grid.active {
+    display: grid;
+    animation: fadeIn .5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .card{
@@ -305,7 +379,7 @@ nav a:hover{
 }
 
 .contato-box:hover{
-    background:#d4a63c;
+    background:var(--dourado-escuro);
     color:#fff;
     transform:translateY(-4px);
 }
@@ -464,13 +538,13 @@ footer img{
     margin-bottom:20px;
 }
 
-/* BOTÃO FLUTUANTE WHATSAPP (CORRIGIDO: POSIÇÃO E VERDE OFICIAL) */
+/* BOTÃO FLUTUANTE WHATSAPP */
 
 .btn-whatsapp {
     position: fixed;
-    right: 60px; /* Movido mais para a esquerda */
+    right: 60px;
     bottom: 25px;
-    background-color: #25D366; /* Verde oficial WhatsApp */
+    background-color: #25D366;
     color: #fff;
     border-radius: 50px;
     padding: 12px 22px;
@@ -495,7 +569,7 @@ footer img{
 }
 
 .btn-whatsapp:hover {
-    background-color: #128C7E; /* Tom verde escuro oficial no hover */
+    background-color: #128C7E;
 }
 
 /* ANIMAÇÕES */
@@ -555,7 +629,7 @@ header.scroll{
         max-width:100%;
     }
 
-    .cards{
+    .cards-grid{
         grid-template-columns:1fr;
     }
 
@@ -676,18 +750,30 @@ header.scroll{
         margin:20px 0 0;
     }
 
-    /* SERVIÇOS */
+    /* SERVIÇOS MOBILE */
 
     #servicos{
         padding:70px 0;
     }
 
     .titulo{
-        margin-bottom:40px;
+        margin-bottom:30px;
     }
 
     .titulo h2{
         font-size:32px;
+    }
+
+    .tabs-container {
+        gap: 10px;
+        margin-bottom: 35px;
+    }
+
+    .tab-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 18px;
+        font-size: 14px;
     }
 
     .card{

@@ -2,157 +2,141 @@ const URL = "https://script.google.com/macros/s/AKfycbx0gAnvDMbRhTUutjkCE3XIWZJY
 
 /* ===========================================
    DRA. KAREN GARCIA
-   ADVOCACIA DE TRÂNSITO
+   ADVOCACIA ESPECIALIZADA
 ===========================================*/
 
-// MENU MUDA AO ROLAR
+document.addEventListener('DOMContentLoaded', () => {
 
-const header = document.querySelector("header");
+    // MENU MUDA AO ROLAR
+    const header = document.querySelector("header");
 
-window.addEventListener("scroll", () => {
+    if (header) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 80) {
+                header.classList.add("scroll");
+            } else {
+                header.classList.remove("scroll");
+            }
+        });
+    }
 
-    if (window.scrollY > 80) {
+    // BOTÃO WHATSAPP PULSANDO
+    const whatsapp = document.querySelector(".btn-whatsapp");
 
-        header.classList.add("scroll");
+    if (whatsapp) {
+        setInterval(() => {
+            whatsapp.classList.toggle("pulse");
+        }, 1200);
+    }
 
-    } else {
+    // ALTERNÂNCIA DE ABAS (ÁREAS DE ATUAÇÃO)
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const cardsGrids = document.querySelectorAll('.cards-grid');
 
-        header.classList.remove("scroll");
+    if (tabButtons.length > 0) {
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const target = button.getAttribute('data-target');
 
+                // Remove a classe active de todas as abas e grids
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                cardsGrids.forEach(grid => grid.classList.remove('active'));
+
+                // Adiciona active na aba e grid selecionados
+                button.classList.add('active');
+                const targetGrid = document.getElementById(target);
+                if (targetGrid) {
+                    targetGrid.classList.add('active');
+                }
+            });
+        });
+    }
+
+    // ANIMAÇÃO DOS CARDS AO ROLAR A PÁGINA
+    const cards = document.querySelectorAll(".card");
+
+    if (cards.length > 0 && 'IntersectionObserver' in window) {
+        const observador = new IntersectionObserver((entradas) => {
+            entradas.forEach((entrada) => {
+                if (entrada.isIntersecting) {
+                    entrada.target.classList.add("show");
+                }
+            });
+        }, {
+            threshold: .25
+        });
+
+        cards.forEach((card) => {
+            observador.observe(card);
+        });
+    }
+
+    /* =====================================================
+       FORMULÁRIO - GOOGLE SHEETS & WHATSAPP
+    ===================================================== */
+
+    const form = document.getElementById("form-contato");
+    const mensagem = document.getElementById("mensagem");
+
+    if (form) {
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const botao = form.querySelector("button");
+            botao.disabled = true;
+            botao.textContent = "Enviando...";
+
+            if (mensagem) {
+                mensagem.textContent = "";
+            }
+
+            const nomeValor = form.nome.value;
+            const emailValor = form.email.value;
+            const telefoneValor = form.telefone.value;
+            const casoValor = form.caso.value;
+
+            const dados = {
+                nome: nomeValor,
+                email: emailValor,
+                telefone: telefoneValor,
+                caso: casoValor
+            };
+
+            try {
+                await fetch(URL, {
+                    method: "POST",
+                    mode: "no-cors",
+                    body: JSON.stringify(dados)
+                });
+
+                if (mensagem) {
+                    mensagem.style.color = "#2e7d32";
+                    mensagem.innerHTML = "✓ Solicitação enviada com sucesso! Redirecionando para o WhatsApp...";
+                }
+
+                form.reset();
+
+                setTimeout(() => {
+                    const texto = `Olá Dra. Karen!\n\nMeu nome é ${nomeValor}.\n\nTelefone: ${telefoneValor}\n\nE-mail: ${emailValor}\n\nGostaria de falar sobre:\n\n${casoValor}`;
+
+                    window.open(
+                        "https://wa.me/5547999602260?text=" + encodeURIComponent(texto),
+                        "_blank"
+                    );
+                }, 1500);
+
+            } catch (erro) {
+                console.error("Erro:", erro);
+
+                if (mensagem) {
+                    mensagem.style.color = "#c62828";
+                    mensagem.textContent = "Erro de conexão. Tente novamente.";
+                }
+            } finally {
+                botao.disabled = false;
+                botao.textContent = "Solicitar Atendimento";
+            }
+        });
     }
 
 });
-
-// BOTÃO WHATSAPP PULSANDO
-
-const whatsapp = document.querySelector(".btn-whatsapp");
-
-setInterval(() => {
-
-    whatsapp.classList.toggle("pulse");
-
-}, 1200);
-
-// ANIMAÇÃO DOS CARDS
-
-const cards = document.querySelectorAll(".card");
-
-const observador = new IntersectionObserver((entradas) => {
-
-    entradas.forEach((entrada) => {
-
-        if (entrada.isIntersecting) {
-
-            entrada.target.classList.add("show");
-
-        }
-
-    });
-
-}, {
-
-    threshold: .25
-
-});
-
-cards.forEach((card) => {
-
-    observador.observe(card);
-
-});
-
-/* =====================================================
-   FORMULÁRIO - GOOGLE SHEETS
-===================================================== */
-
-const form = document.getElementById("form-contato");
-
-const mensagem = document.getElementById("mensagem");
-
-if(form){
-
-form.addEventListener("submit", async (e)=>{
-
-    e.preventDefault();
-
-    const botao = form.querySelector("button");
-
-    botao.disabled = true;
-
-    botao.textContent = "Enviando...";
-
-    mensagem.textContent = "";
-
-    const dados = {
-
-        nome: form.nome.value,
-
-        email: form.email.value,
-
-        telefone: form.telefone.value,
-
-        caso: form.caso.value
-
-    };
-
-    try{
-
-        const resposta = await fetch(URL, {
-            method: "POST",
-            mode: "no-cors",
-            body: JSON.stringify(dados)
-        });
-
-        if (true) {
-
-            mensagem.style.color = "#2e7d32";
-
-            mensagem.innerHTML = "✓ Solicitação enviada com sucesso! Redirecionando para o WhatsApp...";
-
-            const nome = form.nome.value;
-            const telefone = form.telefone.value;
-            const email = form.email.value;
-            const caso = form.caso.value;
-
-            form.reset();
-
-            setTimeout(() => {
-
-                const texto = `Olá Dra. Karen!
-
-        Meu nome é ${nome}.
-
-        Telefone: ${telefone}
-
-        E-mail: ${email}
-
-        Gostaria de falar sobre:
-
-        ${caso}`;
-
-                window.open(
-                    "https://wa.me/5547999602260?text=" + encodeURIComponent(texto),
-                    "_blank"
-                );
-
-            }, 1500);
-
-        }
-
-    } catch (erro) {
-
-    console.error("Erro:", erro);
-
-    mensagem.style.color = "#c62828";
-
-    mensagem.textContent = "Erro de conexão.";
-
-     }
-
-    botao.disabled=false;
-
-    botao.textContent="Solicitar Atendimento";
-
-});
-
-}
