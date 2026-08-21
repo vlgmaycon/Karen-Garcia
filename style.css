@@ -350,6 +350,150 @@ nav a:hover {
     margin-bottom: 40px;
 }
 
+/* =====================================================
+   CARROSSEL DE AVALIAÇÕES (NOVO)
+====================================================== */
+
+#avaliacoes {
+    padding: 100px 0;
+    background: #fff;
+}
+
+.carrossel-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.avaliacoes-carrossel {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 15px 5px;
+    width: 100%;
+}
+
+/* Ocultar barra de rolagem nativa */
+.avaliacoes-carrossel::-webkit-scrollbar {
+    display: none;
+}
+.avaliacoes-carrossel {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.card-avaliacao {
+    flex: 0 0 calc(33.333% - 17px);
+    min-width: 290px;
+    background: #fff;
+    padding: 35px 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.card-avaliacao .estrelas {
+    color: #FFD700;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.card-avaliacao p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.card-avaliacao .autor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-avaliacao .autor img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card-avaliacao .autor-info span {
+    display: block;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--preto);
+}
+
+.card-avaliacao .autor-info small {
+    color: #888;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-avaliacao .autor-info small i {
+    color: #4285F4;
+}
+
+/* Setas do Carrossel */
+
+.btn-nav {
+    background: #fff;
+    border: 2px solid var(--dourado);
+    color: var(--dourado);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: 0.3s;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.btn-nav:hover {
+    background: var(--dourado);
+    color: #fff;
+    transform: scale(1.08);
+}
+
+.google-btn-container {
+    text-align: center;
+}
+
+.btn-google {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    color: #333;
+    border: 2px solid #ddd;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-google:hover {
+    border-color: var(--dourado);
+    color: var(--dourado);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
 /* CONTATOS */
 
 .contatos {
@@ -652,6 +796,11 @@ header.scroll {
         object-fit: cover;
     }
 
+    /* Ajuste Carrossel Tablet */
+    .card-avaliacao {
+        flex: 0 0 calc(50% - 13px);
+    }
+
     nav {
         display: none;
     }
@@ -778,7 +927,7 @@ header.scroll {
         padding: 30px 20px;
     }
 
-    /* SOBRE */
+    /* SOBRE MOBILE */
 
     #sobre {
         padding: 70px 0;
@@ -809,6 +958,22 @@ header.scroll {
     .sobre-texto p {
         font-size: 15px;
         line-height: 1.7;
+    }
+
+    /* AVALIAÇÕES MOBILE */
+
+    #avaliacoes {
+        padding: 70px 0;
+    }
+
+    .card-avaliacao {
+        flex: 0 0 100%;
+    }
+
+    .btn-nav {
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
     }
 
     /* CONTATO FORMULÁRIO */

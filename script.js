@@ -52,8 +52,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // CARROSSEL DE AVALIAÇÕES (NAVEGAÇÃO POR SETAS)
+    const carrossel = document.getElementById('carrossel');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    if (carrossel && prevBtn && nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            carrossel.scrollBy({ left: 320, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            carrossel.scrollBy({ left: -320, behavior: 'smooth' });
+        });
+    }
+
     // ANIMAÇÃO DOS CARDS AO ROLAR A PÁGINA
-    const cards = document.querySelectorAll(".card");
+    const cards = document.querySelectorAll(".card, .card-avaliacao");
 
     if (cards.length > 0 && 'IntersectionObserver' in window) {
         const observador = new IntersectionObserver((entradas) => {
